@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Service</title>
-    <!-- Tailwind CDN -->
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <script src="script.js"></script>
-      <!-- font -->
-     <link href="font.css">
-      <!-- Font Awosome CDN -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joruri Seba</title>
+  <!-- Tailwind CDN -->
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- Font Awosome CDN -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
-<body>
-   <!-- Navbar -->
+<body class="bg-gray-50">
+
+  <!-- Navbar -->
   <nav class="flex items-center justify-between bg-white shadow px-4 py-3">
-    <div class="flex items-center space-x-2">
-      <img src="images/logo.png" alt="Logo" class="w-[50px] h-[50px]">
-      <span class="text-xl font-bold w-[135px] h-[44px] text-[#006747]">Emergency <br/>Services</span>
-    </div> 
-    <div class="flex items-center  gap-4">
+    <img src="images/logo.png" alt="Logo" class="w-[50px] h-[50px]">
+    
+    <div class="flex space-x-4 gap-4">
       <span id="heartCount" class="flex items-center bg-[#41ff6b1a] rounded-xl">0  <span><img src="images/heart.png" class="w-[24px] h-[24px] rounded-xl" alt=""></span></span>
       <span id="coinCount" class="flex items-center bg-[#41ff6b1a]  rounded-xl">100 <span><img src="images/coin.png" class="w-[24px] h-[24px] rounded-xl" alt=""> </span></span>
       <span id="copyCount" class="flex items-center bg-[#41ff6b1a] rounded-xl">0  Copy</span>
     </div>
+    </div>
+
+
   </nav>
+
   <!-- Hero Section -->
-  <section class="bg-[#013223] text-white text-center py-16">
+  <section class="bg-gradient-to-r from-[#013223] to-[#006747] bg-gradient-to-l from-[#013223] to-[#006747] text-white text-center py-16">
     <img src="images/logo-dark.png" alt="Hero Logo" class="mx-auto w-16 mb-4">
     <h1 class="text-3xl font-bold mb-2">Emergency service Directory</h1>
     <p class="text-lg">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
   </section>
 
-  <!-- Main Section -->
-  <main class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
 
-    <!-- Hotline Cards Section -->
-    <section class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <!-- Main Section -->
+  <main class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
+
+    <!-- Cards Section -->
+    <section class="lg:col-span-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
       <!-- Card 1 -->
-      <div class="bg-white p-4 rounded-xl shadow w-[436px] h-[360px] ">
-      
-        <div class="flex justify-between p-12">
-          <div>
-        <img src="images/emergency.png"  class="w-[32px] h-[32px] rounded-xl"  alt="">
+      <div class="bg-white p-4 rounded-xl shadow">
+        <div class="flex justify-between">
+          <span  class="w-[50px] h-[50px] rounded-xl"><img src="images/emergency.png"  class=""  alt=""></span>
+          <span id="heart1" class="cursor-pointer text-red-500 "><i class="fa-regular fa-heart"></i></span>
+        </div>
         <h2 class="text-lg font-bold mt-2">National Emergency Number</h2>
         <p class="text-sm text-gray-500">National Emergency</p>
-        <p class="font-[700px] font-bold text-lg font-roboto mt-2 hotlineNumber">999</p>
+        <p id="num1" class=" text-2xl font-bold font-roboto mt-2 hotlineNumber">999</p>
+        <p class="text-sm bg-[#d4d6d5] w-[21px] h-[25px] rounded-xl">All</p>
+        <div class="flex justify-between mt-2 gap-2">
+          <button id="copy1" class="copyBtn bg-[#d4d6d5] w-[182px] h-[40px] px-3 py-1 rounded"><span><i class="fa-regular fa-copy"></i></span>  Copy</button>
+          <button id="call1" class="callBtn w-[182px] h-[40px] bg-[#00a63e] text-white px-3 py-1 rounded"><i class="fa-solid fa-phone"></i></span> Call</button>
         </div>
-          <span><img src="images/heart.png" class=" bg-white[24px] h-[24px] rounded-xl " alt=""></span></span>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <div class="flex justify-between">
+          <span  class="w-[50px] h-[50px] rounded-xl"><img src="images/police.png"  class=""  alt=""></span>
+          <span id="heart2" class="cursor-pointer text-red-500 "><i class="fa-regular fa-heart"></i></span>
         </div>
-        
-        <div class="flex justify-between mt-10">
-          <button class="copyBtn bg-[#d4d6d5] w-[182px] h-[40px] px-3 py-1 rounded"><span><i class="fa-regular fa-copy"></i></span> Copy</button>
-          <button class="callBtn w-[182px] h-[40px] bg-[#00a63e] text-white px-3 py-1 rounded"><span><i class="fa-solid fa-phone"></i></span> Call</button>
+        <h2 class="text-lg font-bold mt-2">Police Helpline Number</h2>
+        <p class="text-sm text-gray-500">Police</p>
+        <p id="num2" class=" text-2xl font-bold  font-roboto mt-2 hotlineNumber">999</p>
+        <p class="text-sm bg-[#d4d6d5] w-[35px] h-[20px] rounded">Police</p>
+        <div class="flex justify-between mt-2  gap-2">
+          <button id="copy2" class="copyBtn bg-[#d4d6d5] w-[182px] h-[40px] px-3 py-1 rounded"><span><i class="fa-regular fa-copy"></i></span> Copy</button>
+          <button id="call2" class="callBtn w-[182px] h-[40px] bg-[#00a63e] text-white px-3 py-1 rounded"><i class="fa-solid fa-phone"></i></span> Call</button>
         </div>
       </div>
 
-<!-- History Section -->
-    <section class="bg-white p-4 rounded-xl shadow">
-      <div class="flex justify-between items-center mb-3">
-        <h2 class="text-xl font-bold">📜 History</h2>
-        <button id="clearHistory" class="text-red-500">Clear</button>
+      <!-- Card 3 -->
+      <div class="bg-white p-4 rounded-xl shadow">
+        <div class="flex justify-between">
+          <span  class="w-[50px] h-[50px] rounded-xl"><img src="images/fire-service.png"  class=""  alt=""></span>
+          <span id="heart3" class="cursor-pointer text-red-500 "><i class="fa-regular fa-heart"></i></span>
+        </div>
+        <h2 class="text-lg font-bold mt-2">Fire Service Number</h2>
+        <p class="text-sm text-gray-500">Fire Service</p>
+        <p id="num3" class="font-bold  text-2xl font-roboto mt-2 hotlineNumber">999</p>
+        <p class="text-sm bg-[#d4d6d5] w-[35px] h-[20px] rounded">Fire</p>
+        <div class="flex justify-between mt-2  gap-2">
+          <button id="copy3" class="copyBtn bg-[#d4d6d5] w-[182px] h-[40px] px-3 py-1 rounded"><span><i class="fa-regular fa-copy"></i></span> Copy</button>
+          <button id="call3" class="callBtn w-[182px] h-[40px] bg-[#00a63e] text-white px-3 py-1 rounded"><i class="fa-solid fa-phone"></i></span> Call</button>
+        </div>
       </div>
-      <ul id="historyList" class="space-y-2 text-sm text-gray-700"></ul>
+
     </section>
-  </main>
-  
+
+     <!-- History -->
+    <section class="bg-white p-4 rounded-xl shadow">
+      <div class="flex justify-between">
+        <h2 class="font-bold"><i class="fa-solid fa-clock-rotate-left"></i> Call History</h2>
+        <button id="clearHistory" class="text-white bg-[#00a63e] text-white w-[114px] h-[72] rounded-3xl">Clear</button>
+      </div>
+      <ul id="historyList" class="text-sm mt-2"></ul>
+    </section>
+    </main>
+  <script src="script.js"></script>
 </body>
 </html>

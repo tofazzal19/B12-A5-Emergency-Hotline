@@ -2,50 +2,55 @@ let heartCount = 0;
 let coinCount = 100;
 let copyCount = 0;
 
-// ❤️ Heart Button
-document.querySelectorAll(".heartBtn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    heartCount++;
-    document.getElementById("heartCount").textContent = "❤️ " + heartCount;
-  });
-});
+//  HEART BUTTONS
+document.getElementById("heart1").onclick = function() {
+  heartCount++; document.getElementById("heartCount").textContent = "heart1" + heartCount;
+};
+document.getElementById("heart2").onclick = function() {
+  heartCount++; document.getElementById("heartCount").textContent = "heart2" + heartCount;
+};
+document.getElementById("heart3").onclick = function() {
+  heartCount++; document.getElementById("heartCount").textContent = "heart3" + heartCount;
+};
+//  COPY BUTTONS
+document.getElementById("copy1").onclick = function() {
+  let number = document.getElementById("num1").textContent;
+  navigator.clipboard.writeText(number);
+  copyCount++; document.getElementById("copyCount").textContent = "num1" + copyCount;
+  alert("Number copied: " + number);
+};
+document.getElementById("copy2").onclick = function() {
+  let number = document.getElementById("num2").textContent;
+  navigator.clipboard.writeText(number);
+  copyCount++; document.getElementById("copyCount").textContent = "num1" + copyCount;
+  alert("Number copied: " + number);
+};
+document.getElementById("copy3").onclick = function() {
+  let number = document.getElementById("num3").textContent;
+  navigator.clipboard.writeText(number);
+  copyCount++; document.getElementById("copyCount").textContent = "num3" + copyCount;
+  alert("Number copied: " + number);
+};
+//  CALL BUTTONS
+function makeCall(serviceName, numberId) {
+  let serviceNumber = document.getElementById(numberId).textContent;
+  if (coinCount >= 20) {
+    coinCount -= 20;
+    document.getElementById("coinCount").textContent = "coinCount" + coinCount;
+    alert("Calling " + serviceName + " (" + serviceNumber + ")");
+    let now = new Date().toLocaleString();
+    let li = document.createElement("li");
+    li.textContent = serviceName  +  " - "  + serviceNumber + " (" + now + ")";
+    document.getElementById("historyList").appendChild(li);
+  } else {
+    alert("Not enough coins!");
+  }
+}
 
-// 📋 Copy Button
-document.querySelectorAll(".copyBtn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const number = btn.parentElement.previousElementSibling.textContent;
-    navigator.clipboard.writeText(number);
-    copyCount++;
-    document.getElementById("copyCount").textContent = "📋 " + copyCount;
-    alert("Number copied: " + number);
-  });
-});
-
-// 📞 Call Button
-document.querySelectorAll(".callBtn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const card = btn.closest("div").parentElement;
-    const serviceName = card.querySelector("h2").textContent;
-    const serviceNumber = card.querySelector(".hotlineNumber").textContent;
-
-    if (coinCount >= 20) {
-      coinCount -= 20;
-      document.getElementById("coinCount").textContent = "🪙 " + coinCount;
-      alert(`Calling ${serviceName} (${serviceNumber})...`);
-
-      // Add history with time
-      const now = new Date().toLocaleString();
-      const li = document.createElement("li");
-      li.textContent = `${serviceName} - ${serviceNumber} (${now})`;
-      document.getElementById("historyList").appendChild(li);
-    } else {
-      alert("Not enough coins!");
-    }
-  });
-});
-
-// 🗑️ Clear History
-document.getElementById("clearHistory").addEventListener("click", () => {
+document.getElementById("call1").onclick = function() { makeCall("National Emergency Number", "num1"); };
+document.getElementById("call2").onclick = function() { makeCall("Police Helpline Number", "num2"); };
+document.getElementById("call3").onclick = function() { makeCall("Fire Service Number", "num3"); };
+//  CLEAR HISTORY
+document.getElementById("clearHistory").onclick = function() {
   document.getElementById("historyList").innerHTML = "";
-});
-
+};
